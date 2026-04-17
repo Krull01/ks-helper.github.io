@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KS Helper - Подсказка для сотрудников</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="top-panel" style="justify-content: center; gap: 2rem; padding: 0 1rem;">
+        <div class="logo" style="margin-right: 0;">KS Helper</div>
+
+        <nav class="main-nav" style="margin-left: 0;">
+            <button class="nav-item active" data-target="tariffs-section">Тарифы</button>
+            <button class="nav-item" data-target="master-section">Мастер</button>
+            <button class="nav-item" data-target="houses-section">Информация про дома</button>
+            <button class="nav-item" data-target="links-section">Полезные ссылки</button>
+            <button class="nav-item" data-target="iperf3-section">Iperf3</button>
+        </nav>
+
+        <div class="controls-wrapper" style="display: flex; gap: 0.8rem; align-items: center; margin-left: 0;">
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="ua">UA</button>
+            </div>
+            <div class="theme-switch">
+                <button class="theme-btn active" data-theme="light">☀️</button>
+                <button class="theme-btn" data-theme="dark">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="content-container">
+        <!-- ТАРИФЫ -->
+        <section id="tariffs-section" class="content-section active">
+            <div class="section-header">
+                <h1>Тарифы</h1>
+                <p>Актуальная информация по тарифным планам</p>
+            </div>
+
+            <div class="tabs">
+                <button class="tab-item active" data-tab="regular-tariffs">Обычные</button>
+                <button class="tab-item" data-tab="contract-tariffs">Контракт</button>
+            </div>
+
+            <div class="tab-content">
+                <div id="regular-tariffs" class="tab-pane active">
+                    <div class="sub-tabs">
+                        <button class="sub-tab-item active" data-subtab="vse-razom">Все Разом</button>
+                        <button class="sub-tab-item" data-subtab="prosto-di">Просто ДИ</button>
+                    </div>
+
+                    <div class="sub-tab-content">
+                        <!-- ВСЕ РАЗОМ -->
+                        <div id="vse-razom" class="sub-tab-pane active">
+                            <div class="promo-banner">
+                                Вартість при підключенні: <strong>200 грн/міс</strong> (місяць підключ. + 2 міс.)
+                            </div>
+                            <div class="cards-grid">
+                                <!-- ПЕРЕВАГА -->
+                                <div class="card">
+                                    <h3>ВСЕ РАЗОМ ПЕРЕВАГА</h3>
+                                    <div class="price">250 <span>грн/міс</span></div>
+                                    <ul class="features">
+                                        <li><strong>Домашній інтернет:</strong> 100 Мбіт/с</li>
+                                        <li><em>Ознайомчий доступ до 1 Гбіт/с</em></li>
+                                        <li><strong>Київстар ТБ:</strong> Безкоштовний пакет «Легкий Домашній»</li>
+                                        <li><strong>Мобільний Інтернет:</strong> 20 ГБ</li>
+                                        <li><strong>Дзвінки (КС та по Україні):</strong> 1200 хв</li>
+                                    </ul>
+                                    <div class="supersila">
+                                        <strong>1 Суперсила на вибір:</strong> 300 SMS, 300 хв (інші мережі), 5 ГБ +
+                                        Viber, Відео на ходу, 5 ГБ у роумінгу, Соцмережі та месенджери.
+                                    </div>
+                                </div>
+
+                                <!-- ЄДНІСТЬ -->
+                                <div class="card">
+                                    <div class="card-badge">Регіональний*</div>
+                                    <h3>ВСЕ РАЗОМ ЄДНІСТЬ</h3>
+                                    <div class="price">300 <span>грн/міс</span></div>
+                                    <ul class="features">
+                                        <li><strong>Домашній інтернет:</strong> 100 Мбіт/с</li>
+                                        <li><em>Ознайомчий доступ до 1 Гбіт/с</em></li>
+                                        <li><strong>Київстар ТБ:</strong> При підключенні Суперсили</li>
+                                        <li><strong>Мобільний Інтернет:</strong> 25 ГБ</li>
+                                        <li><strong>Дзвінки (КС та по Україні):</strong> 1200 хв</li>
+                                        <li><strong>СМС по Україні:</strong> 100 шт</li>
+                                    </ul>
+                                    <div class="supersila">
+                                        <strong>1 Суперсила на вибір:</strong> Відео на ходу, Соцмережі та месенджери, 5
+                                        ГБ в роумінгу, Київстар ТБ, Гігабіт.
+                                    </div>
+                                </div>
+
+                                <!-- ЛЕГКИЙ FMC -->
+                                <div class="card">
+                                    <h3>ВСЕ РАЗОМ Легкий FMC</h3>
+                                    <div class="price">350 <span>грн/міс</span></div>
+                                    <ul class="features">
+                                        <li><strong>Домашній інтернет:</strong> 1 Гбіт/с</li>
+                                        <li><strong>Київстар ТБ:</strong> При підключенні Суперсили</li>
+                                        <li><strong>Мобільний Інтернет:</strong> 40 ГБ</li>
+                                        <li><strong>Дзвінки (інші мережі та за кордон):</strong> 300 хв (16 країн)</li>
+                                    </ul>
+                                    <div class="supersila">
+                                        <strong>1 Суперсила на вибір:</strong> Київстар ТБ, Соцмережі та месенджери,
+                                        Відео на ходу, Допомога ЗСУ, 5 ГБ в роумінгу, SIM для планшета/роутера/телефону.
+                                    </div>
+                                </div>
+
+                                <!-- КРУТИЙ FMC -->
+                                <div class="card">
+                                    <div class="card-badge">ТОП</div>
+                                    <h3>ВСЕ РАЗОМ Крутий FMC</h3>
+                                    <div class="price">500 <span>грн/міс</span></div>
+                                    <ul class="features">
+                                        <li><strong>Домашній інтернет:</strong> 1 Гбіт/с</li>
+                                        <li><strong>Київстар ТБ:</strong> При підключенні Суперсили</li>
+                                        <li><strong>Мобільний Інтернет:</strong> Безліміт (після 100 ГБ - 0,8 Мбіт/с)
+                                        </li>
+                                        <li><strong>Дзвінки (інші мережі та кордон):</strong> 600 хв (16 країн)</li>
+                                        <li><strong>СМС по Україні:</strong> 300 шт</li>
+                                    </ul>
+                                    <div class="supersila">
+                                        <strong>1 Суперсила на вибір:</strong> Київстар ТБ, Допомога ЗСУ, 5 ГБ в
+                                        роумінгу, SIM для планшета/роутера/телефону.
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="footnote">* Тариф "Єдність" доступний у вибраних містах (Вознесенськ, Запоріжжя,
+                                Івано-Франківськ, Ковель та ін.)</p>
+                        </div>
+
+                        <!-- ПРОСТО ДИ -->
+                        <div id="prosto-di" class="sub-tab-pane">
+                            <div class="cards-grid">
+
+                                <!-- БАЗОВЫЙ (Бывший УДАЧА) -->
+                                <div class="card">
+                                    <h3>Базовый</h3>
+                                    <div class="price">200 <span>грн/міс</span></div>
+                                    <div class="promo-banner"
+                                        style="margin-bottom: 1rem; padding: 0.5rem; font-size: 0.85rem;">
+                                        <strong>Акція:</strong> 100 грн/міс на перші 6 місяців!
+                                    </div>
+                                    <ul class="features">
+                                        <li><strong>Швидкість:</strong> 100 Мбіт/с</li>
+                                        <li><em>Ознайомчий доступ до 1 Гбіт/с (міс. підкл. + 2 міс)</em></li>
+                                        <li><strong>Київстар ТБ:</strong> Безкоштовний пакет «Легкий Домашній»</li>
+                                    </ul>
+                                    <div class="supersila">
+                                        <strong>Додатково:</strong> Тільки для нового підключення.
+                                    </div>
+                                </div>
+
+                                <!-- ОБЕРІГ -->
+                                <div class="card">
+                                    <h3>ОБЕРІГ</h3>
+                                    <div class="price">200 <span>грн/міс</span></div>
+                                    <div class="promo-banner"
+                                        style="margin-bottom: 1rem; padding: 0.5rem; font-size: 0.85rem; background: rgba(0, 149, 217, 0.05);">
+                                        <strong>Оплата:</strong> 1200 грн розраховується раз на 6 місяців.
+                                    </div>
+                                    <ul class="features">
+                                        <li><strong>Швидкість:</strong> 100 Мбіт/с</li>
+                                        <li><em>Ознайомчий доступ до 1 Гбіт/с (міс. підкл. + 2 міс)</em></li>
+                                        <li><strong>Київстар ТБ:</strong> За умови вибору Суперсили КС ТБ</li>
+                                    </ul>
+                                    <div class="supersila">
+                                        <strong>1 Суперсила на вибір:</strong> Київстар ТБ або Гігабіт.<br>
+                                        <em>Тільки для нового підключення.</em>
+                                    </div>
+                                </div>
+
+                                <!-- ОБЕРІГ НА РІК -->
+                                <div class="card">
+                                    <div class="card-badge">Річний план</div>
+                                    <h3>ОБЕРІГ НА РІК</h3>
+                                    <div class="price">165 <span>грн/міс</span></div>
+                                    <div class="promo-banner"
+                                        style="margin-bottom: 1rem; padding: 0.5rem; font-size: 0.85rem; background: rgba(0, 149, 217, 0.05);">
+                                        <strong>Оплата:</strong> 1980 грн розраховується раз на 12 місяців.
+                                    </div>
+                                    <ul class="features">
+                                        <li><strong>Швидкість:</strong> 100 Мбіт/с</li>
+                                        <li><em>Ознайомчий доступ до 1 Гбіт/с (міс. підкл. + 2 міс)</em></li>
+                                        <li><strong>Київстар ТБ:</strong> За умови вибору Суперсили КС ТБ</li>
+                                    </ul>
+                                    <div class="supersila">
+                                        <strong>1 Суперсила на вибір:</strong> Київстар ТБ або Гігабіт.<br>
+                                        <em>Тільки для нового підключення.</em>
+                                    </div>
+                                </div>
+
+                                <!-- ОПТИМАЛЬНИЙ -->
+                                <div class="card">
+                                    <h3>Оптимальний</h3>
+                                    <div class="price">350 <span>грн/міс</span></div>
+                                    <div class="promo-banner"
+                                        style="margin-bottom: 1rem; padding: 0.5rem; font-size: 0.85rem;">
+                                        <strong>Акція «Легкий старт»:</strong> 200 грн/міс (місяць підкл. + 2 наступні).
+                                    </div>
+                                    <ul class="features">
+                                        <li><strong>Швидкість:</strong> до 300 Мбіт/с</li>
+                                        <li><strong>Київстар ТБ:</strong> За умови вибору Суперсили КС ТБ</li>
+                                    </ul>
+                                    <div class="supersila">
+                                        <strong>Суперсила включена:</strong> Суперсила КС ТБ.
+                                    </div>
+                                </div>
+
+                                <!-- КОМФОРТНИЙ -->
+                                <div class="card">
+                                    <div class="card-badge">Гігабіт</div>
+                                    <h3>Комфортний</h3>
+                                    <div class="price">450 <span>грн/міс</span></div>
+                                    <div class="promo-banner"
+                                        style="margin-bottom: 1rem; padding: 0.5rem; font-size: 0.85rem;">
+                                        <strong>Акція «Легкий старт»:</strong> 200 грн/міс (місяць підкл. + 2 наступні).
+                                    </div>
+                                    <ul class="features">
+                                        <li><strong>Швидкість:</strong> до 1 Гбіт/с</li>
+                                        <li><strong>Київстар ТБ:</strong> За умови вибору Суперсили КС ТБ</li>
+                                        <li><strong>Статична IP:</strong> Безкоштовне підключення IP-адреси</li>
+                                    </ul>
+                                    <div class="supersila">
+                                        <strong>Суперсила включена:</strong> Суперсила КС ТБ.
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contract-tariffs" class="tab-pane">
+                    <div class="promo-banner" style="text-align: left;">
+                        <h3 style="color: var(--ks-blue-dark); margin-bottom: 0.5rem; font-size: 1.1rem;">ПЕРЕЛІК
+                            АРХІВНИХ ТАРИФІВ, В ЯКИХ МОЖЛИВО ПІДКЛЮЧИТИ СУПЕРСИЛУ ДОМАШНІЙ ІНТЕРНЕТ КОНТРАКТ</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Окрім доступних для підключення ТП контракт
+                            (шляхом НКП, міграції чи зміни ТП) Суперсила ДІ доступна в ряді архівних ТП.</p>
+                        <p style="font-size: 0.9rem;"><strong>Тобто, якщо абонента по номеру вже підключений вказаний
+                                ТП, то він має можливість підключити Суперсилу ДІ.</strong></p>
+                    </div>
+
+                    <div class="cards-grid">
+                        <!-- Магніт -->
+                        <div class="card contract-card">
+                            <div class="card-badge">для MNP</div>
+                            <h3>LOVE UA. Магніт Контракт</h3>
+                            <div class="price">220 <span>грн/міс</span></div>
+                            <ul class="features">
+                                <li><strong>Мобільний інтернет:</strong> 30 ГБ</li>
+                                <li><strong>Дзвінки на Київстар та по Україні:</strong> 1200 хв</li>
+                                <li><strong>SMS:</strong> 100 шт</li>
+                            </ul>
+                            <div class="supersila">
+                                <strong>1 Суперсила на вибір:</strong><br>
+                                <em>Домашній Інтернет 100 Мбіт/с (Ознайомчий доступ до 1 Гбіт/с на 3 міс.)</em><br><br>
+                                На вибір: Київстар ТБ, 50 хвилин за кордон, Відео на ходу, SIM для планшета, SIM для
+                                другого телефону, 5 ГБ у роумінгу, Соцмережі та месенджери.
+                            </div>
+                        </div>
+
+                        <!-- Безлім -->
+                        <div class="card contract-card">
+                            <div class="card-badge" style="background: var(--text-muted); color: var(--white);">
+                                непублічний</div>
+                            <h3>LOVE UA Безлім Контракт</h3>
+                            <div class="price">200 <span>грн/міс</span></div>
+                            <ul class="features">
+                                <li><strong>Мобільний інтернет:</strong> Безлім (40 ГБ на макс. швидкості)</li>
+                                <li><strong>Дзвінки на Київстар та по Україні:</strong> 1200 хв</li>
+                                <li><strong>Дзвінки на інші мережі та за кордон:</strong> 100 хв</li>
+                                <li><strong>SMS:</strong> 100 шт</li>
+                            </ul>
+                            <div class="supersila">
+                                <strong>1 Суперсила на вибір:</strong><br>
+                                <em>Домашній Інтернет 100 Мбіт/с (Ознайомчий доступ до 1 Гбіт/с на 3 міс.)</em><br><br>
+                                На вибір: 5 ГБ у роумінгу, 300 хвилин на інші мережі та за кордон, 300 SMS по Україні,
+                                SIM для планшета, SIM для другого телефону, Київстар ТБ.
+                            </div>
+                        </div>
+
+                        <!-- Сила -->
+                        <div class="card contract-card">
+                            <h3>LOVE UA.Сила Контракт</h3>
+                            <div class="price">330 <span>грн/міс</span></div>
+                            <ul class="features">
+                                <li><strong>Мобільний інтернет:</strong> 50 ГБ</li>
+                                <li><strong>Дзвінки на Київстар та по Україні:</strong> 1200 хв</li>
+                                <li><strong>Дзвінки на інші мережі та за кордон:</strong> 300 хв</li>
+                                <li><strong>SMS:</strong> 300 шт</li>
+                            </ul>
+                            <div class="supersila">
+                                <strong>1 Суперсила на вибір:</strong><br>
+                                <em>Домашній Інтернет 100 Мбіт/с (Ознайомчий доступ до 1 Гбіт/с на 3 міс.)</em><br><br>
+                                На вибір: Київстар ТБ, 300 хвилин на інші мережі та за кордон, Соцмережі та месенджери,
+                                Відео на ходу, SIM для планшета, SIM для другого телефону, 5 ГБ у роумінгу.
+                            </div>
+                        </div>
+
+                        <!-- Успіх -->
+                        <div class="card contract-card">
+                            <div class="card-badge">2 Суперсили</div>
+                            <h3>LOVE UA.Успіх Контракт</h3>
+                            <div class="price">600 <span>грн/міс</span></div>
+                            <ul class="features">
+                                <li><strong>Мобільний інтернет:</strong> Безлім</li>
+                                <li><strong>Дзвінки на інші мережі та за кордон:</strong> 1000 хв</li>
+                                <li><strong>SMS:</strong> 300 шт</li>
+                            </ul>
+                            <div class="supersila">
+                                <strong>2 Суперсили на вибір:</strong><br>
+                                <em>Домашній Інтернет 100 Мбіт/с (Ознайомчий доступ до 1 Гбіт/с на 3 міс.)</em><br><br>
+                                На вибір: Київстар ТБ, 300 хвилин на інші мережі та за кордон, SIM для планшета, SIM для
+                                другого телефону, 5 ГБ у роумінгу.
+                            </div>
+                        </div>
+
+                        <!-- Преміум -->
+                        <div class="card contract-card">
+                            <div class="card-badge" style="background: var(--text-muted); color: var(--white);">
+                                непублічний</div>
+                            <h3>ВАШ Преміум</h3>
+                            <div class="price">750 <span>грн/міс</span></div>
+                            <ul class="features">
+                                <li><strong>Мобільний інтернет:</strong> Безлім</li>
+                                <li><strong>Дзвінки на інші мережі та за кордон:</strong> 1500 хв</li>
+                                <li><strong>SMS:</strong> 100 шт</li>
+                            </ul>
+                            <div class="supersila">
+                                <strong>2 Суперсили на вибір:</strong><br>
+                                <em>Домашній Інтернет 100 Мбіт/с (Ознайомчий доступ до 1 Гбіт/с на 3 міс.)</em><br><br>
+                                На вибір: Київстар ТБ, SIM для планшета, SIM для другого телефону, 5 ГБ у роумінгу.
+                            </div>
+                        </div>
+
+                        <!-- Преміум+ -->
+                        <div class="card contract-card">
+                            <div class="card-badge" style="background: var(--text-muted); color: var(--white);">
+                                непублічний</div>
+                            <h3>ВАШ Преміум+</h3>
+                            <div class="price">1000 <span>грн/міс</span></div>
+                            <ul class="features">
+                                <li><strong>Мобільний інтернет:</strong> Безлім</li>
+                                <li><strong>Дзвінки на інші мережі та за кордон:</strong> 2500 хв</li>
+                                <li><strong>SMS:</strong> 100 шт</li>
+                            </ul>
+                            <div class="supersila">
+                                <strong>2 Суперсили на вибір:</strong><br>
+                                <em>Домашній Інтернет 100 Мбіт/с (Ознайомчий доступ до 1 Гбіт/с на 3 міс.)</em><br><br>
+                                На вибір: Київстар ТБ, SIM для планшета, SIM для другого телефону, 5 ГБ у роумінгу.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- МАСТЕР -->
+        <section id="master-section" class="content-section">
+            <div class="section-header">
+                <h1>Вызов мастера</h1>
+                <p>Інформація щодо послуг та вартості</p>
+            </div>
+
+            <div class="info-block" style="margin-bottom: 2rem; border-radius: var(--radius-md);">
+                <h3>Скільки це коштує</h3>
+                <p>Вартість послуги — <strong>200 грн</strong>, незалежно від обсягу робіт. Щоб замовити послугу,
+                    пересвідчіться, що на вашому особовому рахунку достатньо коштів, адже плата за Виклик майстра
+                    зніметься саме з нього.</p>
+                <p class="footnote" style="text-align: left; margin-top: 0.5rem; color: var(--text-main);"><strong>Будь
+                        ласка, зверніть увагу.</strong> Деякі додаткові послуги оплачуються окремо.</p>
+            </div>
+
+            <h2 style="margin-bottom: 1.5rem; color: var(--text-main); font-size: 1.8rem; text-align: center;">
+                Найчастіше запитують</h2>
+
+            <div class="card" style="margin-bottom: 2rem;">
+                <h3
+                    style="color: var(--ks-blue-dark); border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1rem;">
+                    Що входить до вартості послуги?</h3>
+                <ul class="features">
+                    <li><span style="font-weight: 500;">Візит та консультація з питань Домашнього Інтернету і
+                            телебачення</span></li>
+                    <li><span style="font-weight: 500;">Діагностика обладнання за адресою підключення</span></li>
+                    <li><span style="font-weight: 500;">Базове налаштування пристроїв:</span> Wi-Fi роутер (без
+                        перевстановлення програмного забезпечення), PON injector, ONU-термінал</li>
+                    <li><span style="font-weight: 500;">Демонстрація працездатності послуги Домашній Інтернет та
+                            гігабітної швидкості</span> (наприклад, вимір швидкості; демонстрація працездатності
+                        телебачення/інтернету, надання консультації щодо пошуку телеканалів та роботи ТВ-тюнера для
+                        телебачення)</li>
+                    <li><span style="font-weight: 500;">Налаштування Київстар ТБ</span> на ПК/ноутбуці, мобільних
+                        пристроях з ОС Android/iOS, SMART-телевізорах Samsung і LG, а також ТВ-тюнерах і
+                        SMART-телевізорах з Android TV</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3
+                    style="color: var(--ks-blue-dark); border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1rem;">
+                    Скільки коштують додаткові послуги?</h3>
+                <div class="table-responsive">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Послуга</th>
+                                <th>Вартість</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Замінити конектор на кабелі</td>
+                                <td>50 грн/1 конектор</td>
+                            </tr>
+                            <tr>
+                                <td>Виготовити з'єднувальний кабель (патч-корд)</td>
+                                <td>25 грн/1 метр</td>
+                            </tr>
+                            <tr>
+                                <td>Прокласти новий кабель (перенесення/подовження)</td>
+                                <td>15 грн/метр</td>
+                            </tr>
+                            <tr>
+                                <td>Просвердлити отвори для прокладання кабелю</td>
+                                <td>100 грн/отвір</td>
+                            </tr>
+                            <tr>
+                                <td>Зварювання оптичного волокна GPON (перенесення/подовження)</td>
+                                <td>150 грн/зварка</td>
+                            </tr>
+                            <tr>
+                                <td>Встановити інтернет-розетки (для кабелю)</td>
+                                <td>150 грн</td>
+                            </tr>
+                            <tr>
+                                <td>Зареєструвати SMART-TV на сайті виробника</td>
+                                <td>200 грн</td>
+                            </tr>
+                            <tr>
+                                <td>Створити поштову скриньку (для реєстрації SMART-TV)</td>
+                                <td>100 грн/скринька</td>
+                            </tr>
+                            <tr>
+                                <td>Зареєструвати в Play Market (створити обліковий запис)</td>
+                                <td>100 грн/1 обліковий запис</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="footnote" style="text-align: left; margin-top: 1rem;">Тарифи наведено з урахуванням усіх
+                    податків та зборів.</p>
+            </div>
+        </section>
+
+        <!-- ПОЛЕЗНЫЕ ССЫЛКИ -->
+        <section id="links-section" class="content-section">
+            <div class="section-header">
+                <h1>Полезные ссылки</h1>
+                <p>Быстрый доступ к рабочим ресурсам</p>
+            </div>
+            <div class="cards-grid"
+                style="justify-content: center; grid-template-columns: repeat(auto-fit, minmax(300px, 400px));">
+                <!-- ТОшники -->
+                <div class="card link-card" style="cursor: default;">
+                    <div class="link-icon">🛠️</div>
+                    <div class="link-info" style="width: 100%;">
+                        <h3
+                            style="margin-bottom: 0.8rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                            СТП</h3>
+                        <div style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <strong>Женя Ворона</strong>
+                                <a href="tel:+380967278772" class="call-btn">📞 +380 96 727 87 72</a>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <strong>Артем Пономарев</strong>
+                                <a href="tel:+380969717969" class="call-btn">📞 +380 96 971 79 69</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Инженеры -->
+                <div class="card link-card" style="cursor: default;">
+                    <div class="link-icon">👷‍♀️</div>
+                    <div class="link-info" style="width: 100%;">
+                        <h3
+                            style="margin-bottom: 0.8rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                            Инженеры</h3>
+                        <div style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+                            <div id="header-ukraine"
+                                style="color: var(--ks-blue); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">
+                                Украина</div>
+                            <div class="engineer-row" data-eng="Устименко Ю." data-region="ukraine"
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <strong>Устименко Юля</strong>
+                                <a href="tel:+380672202842" class="call-btn">📞 067 220 28 42</a>
+                            </div>
+                            <div class="engineer-row" data-eng="Піддубцева Ю." data-region="ukraine"
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <strong>Поддубцева Юля</strong>
+                                <a href="tel:+380672462108" class="call-btn">📞 067 246 21 08</a>
+                            </div>
+                            <div class="engineer-row" data-eng="Папроцька І." data-region="ukraine"
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <strong>Попроцкая Ирина</strong>
+                                <a href="tel:+380672208639" class="call-btn">📞 067 220 86 39</a>
+                            </div>
+                            <div class="engineer-row" data-eng="Михайленко Ю." data-region="ukraine"
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                                <strong>Михайленко Юля</strong>
+                                <a href="tel:+380672241023" class="call-btn">📞 067 224 10 23</a>
+                            </div>
+
+                            <div id="header-kharkov"
+                                style="color: var(--ks-blue); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">
+                                Харьков</div>
+                            <div class="engineer-row" data-eng="Меделянова Н." data-region="kharkov"
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <strong>Меделянова Наташа</strong>
+                                <a href="tel:+380672241847" class="call-btn">📞 067 224 18 47</a>
+                            </div>
+                            <div class="engineer-row" data-eng="Стосяк А." data-region="kharkov"
+                                style="display: flex; justify-content: space-between; align-items: center;">
+                                <strong>Андрей Стосяк</strong>
+                                <a href="tel:+380672150113" class="call-btn">📞 067 215 01 13</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="margin: 2.5rem 0 1.5rem; color: var(--ks-blue-dark); font-size: 1.4rem; text-align: center;">
+                Внешние системы</h2>
+            <div class="cards-grid"
+                style="justify-content: center; grid-template-columns: repeat(auto-fit, minmax(300px, 400px));">
+                <!-- Вэб версия -->
+                <a href="https://cms-wfm.kyivstar.ua/" target="_blank" class="card link-card">
+                    <div class="link-icon">💻</div>
+                    <div class="link-info">
+                        <h3>Вэб версия</h3>
+                        <p>cms-wfm.kyivstar.ua</p>
+                    </div>
+                </a>
+
+                <!-- 1С -->
+                <a href="https://reports.winservice.com.ua/auth" target="_blank" class="card link-card">
+                    <div class="link-icon">📊</div>
+                    <div class="link-info">
+                        <h3>1С</h3>
+                        <p>reports.winservice.com.ua</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- ИНФОРМАЦИЯ ПРО ДОМА -->
+        <section id="houses-section" class="content-section">
+            <div class="section-header" style="text-align: center;">
+                <h1 data-translate="Информация про дома">Информация про дома</h1>
+                <p data-translate="Поиск информации по адресу дома">Поиск информации по адресу дома</p>
+            </div>
+
+            <!-- Форма добавления нового дома -->
+            <div id="add-house-form" class="card"
+                style="display: none; margin-bottom: 2rem; border: 2px solid var(--ks-blue);">
+                <h3 style="margin-bottom: 1rem; color: var(--ks-blue);">Добавить новый адрес</h3>
+                <div class="house-info-grid" style="grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="info-item" style="border: none;">
+                        <span class="info-label">Улица</span>
+                        <input type="text" id="new-house-street" class="user-comment-input"
+                            placeholder="Напр. Валентинівська">
+                    </div>
+                    <div class="info-item" style="border: none;">
+                        <span class="info-label">Дом</span>
+                        <input type="text" id="new-house-number" class="user-comment-input" placeholder="Напр. 15Б">
+                    </div>
+                    <div class="info-item" style="border: none;">
+                        <span class="info-label">ОДС</span>
+                        <input type="text" id="new-house-ods" class="user-comment-input">
+                    </div>
+                    <div class="info-item" style="border: none;">
+                        <span class="info-label">Номер ключа</span>
+                        <input type="text" id="new-house-key" class="user-comment-input">
+                    </div>
+                </div>
+                <div class="info-item" style="border: none; margin-top: 10px;">
+                    <span class="info-label">Комментарий</span>
+                    <textarea id="new-house-comment" class="user-comment-input" style="height: 60px;"></textarea>
+                </div>
+                <div class="edit-actions" style="margin-top: 15px;">
+                    <button id="btn-save-new-house" class="btn-primary"
+                        style="background: var(--ks-blue) !important; color: white !important; font-weight: bold; border: none; padding: 10px 25px; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Сохранить</button>
+                    <button id="btn-cancel-new-house" class="btn-cancel"
+                        style="padding: 10px 20px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border-color); background: #eee; color: #333;">Отмена</button>
+                </div>
+            </div>
+            <div class="search-container"
+                style="max-width: 900px; margin: 0 auto 2rem; display: flex; gap: 10px; align-items: stretch;">
+                <div class="search-input-wrapper" style="position: relative; flex: 2.5;">
+                    <input type="text" id="house-search-input" class="search-input"
+                        placeholder="Введите адрес (улица и дом)..." autocomplete="off"
+                        style="width: 100%; height: 50px;">
+                    <div id="house-suggestions" class="suggestions-list"></div>
+                </div>
+                <button id="house-search-btn" class="btn-primary"
+                    style="height: 50px; flex: 0.7; border-radius: 12px;">Поиск</button>
+                <button id="btn-show-add-house" class="btn-primary"
+                    style="background: var(--ks-blue) !important; color: white !important; font-weight: bold; border: none; height: 50px; border-radius: 12px; cursor: pointer; display: block; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 0 15px; flex: 0.8; white-space: nowrap;">+
+                    Добавить дом</button>
+            </div>
+            <div id="houses-results" class="search-results">
+                <div class="empty-state">
+                    <p>Введите адрес для получения информации.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- IPERF3 -->
+        <section id="iperf3-section" class="content-section">
+            <div class="section-header">
+                <h1>Iperf3</h1>
+                <p>Инструкции по тестированию скорости</p>
+            </div>
+            <div class="terminal-card">
+                <div class="terminal-header">
+                    <div class="mac-btns">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="terminal-title">Terminal - iperf3</div>
+                </div>
+                <div class="terminal-body">
+                    <p class="comment"># меряем upload на 100Мб</p>
+                    <p class="command">iperf3 -c 193.41.63.202 -t 10 -u -b 100M</p>
+                    <br>
+                    <p class="comment"># меряем download на 100Мб</p>
+                    <p class="command">iperf3 -c 193.41.63.202 -t 10 -u -b 100M -R</p>
+                    <br>
+                    <p class="comment"># меряем upload на 1Гб</p>
+                    <p class="command">iperf3 -c 193.41.63.202 -t 10 -u -b 1G</p>
+                    <br>
+                    <p class="comment"># меряем download на 1Гб</p>
+                    <p class="command">iperf3 -c 193.41.63.202 -t 10 -u -b 1G -R</p>
+                </div>
+            </div>
+
+            <h2 style="margin: 2.5rem 0 1.5rem; color: var(--text-main); font-size: 1.8rem; text-align: center;">
+                Установка Iperf3</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3 style="color: var(--ks-blue-dark); text-align: center; margin-bottom: 1rem;"><span
+                            style="font-size: 1.5rem; vertical-align: middle; margin-right: 8px;">🪟</span>Windows</h3>
+                    <ul
+                        style="padding-left: 1.5rem; color: var(--text-main); font-size: 0.95rem; line-height: 1.6; list-style-type: disc;">
+                        <li style="margin-bottom: 0.5rem;">Скачайте архив с <a
+                                href="https://iperf.fr/iperf-download.php" target="_blank"
+                                style="color: var(--ks-blue); font-weight: 500; text-decoration: none;">официального
+                                сайта</a>.</li>
+                        <li style="margin-bottom: 0.5rem;">Распакуйте файлы (<code>iperf3.exe</code> и
+                            <code>cygwin1.dll</code>) в любую папку, например <code>C:\iperf3\</code>.
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">Откройте командную строку (Win+R -> cmd), перейдите в эту
+                            папку: <code>cd C:\iperf3</code> и запускайте команды.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--ks-blue-dark); text-align: center; margin-bottom: 1rem;"><span
+                            style="font-size: 1.5rem; vertical-align: middle; margin-right: 8px;">🍎</span>MacOS</h3>
+                    <ul
+                        style="padding-left: 1.5rem; color: var(--text-main); font-size: 0.95rem; line-height: 1.6; list-style-type: disc;">
+                        <li style="margin-bottom: 0.5rem;">Самый простой способ — использовать Homebrew. Откройте
+                            Терминал.</li>
+                        <li style="margin-bottom: 0.5rem;">Если Homebrew установлен, просто введите:</li>
+                        <div
+                            style="background: rgba(0,0,0,0.05); padding: 5px 10px; margin: 5px 0 15px; border-radius: 4px; font-family: monospace; font-size: 0.9rem; text-align: center;">
+                            brew install iperf3</div>
+                        <li style="margin-bottom: 0.5rem;">После этого iperf3 готов к работе из любого места в
+                            терминале.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--ks-blue-dark); text-align: center; margin-bottom: 1rem;"><span
+                            style="font-size: 1.5rem; vertical-align: middle; margin-right: 8px;">🐧</span>Linux</h3>
+                    <ul
+                        style="padding-left: 1.5rem; color: var(--text-main); font-size: 0.95rem; line-height: 1.6; list-style-type: disc;">
+                        <li style="margin-bottom: 0.5rem;">Программа есть в большинстве стандартных репозиториев.</li>
+                        <li style="margin-bottom: 0.5rem;">Для Ubuntu / Debian введите в терминале:</li>
+                        <div
+                            style="background: rgba(0,0,0,0.05); padding: 5px 10px; margin: 5px 0 15px; border-radius: 4px; font-family: monospace; font-size: 0.85rem; text-align: center;">
+                            sudo apt update && sudo apt install iperf3</div>
+                        <li style="margin-bottom: 0.5rem;">Для CentOS / RHEL: <code>sudo yum install iperf3</code></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно для фото -->
+    <div id="image-modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <script src="lang.js"></script>
+    <script src="schedule.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
