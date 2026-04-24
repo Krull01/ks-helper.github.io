@@ -60,6 +60,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Навигация по под-табам (Контракт)
+    const contractSubTabItems = document.querySelectorAll('.contract-sub-tab-item');
+    const contractSubTabPanes = document.querySelectorAll('.contract-sub-tab-pane');
+
+    contractSubTabItems.forEach(item => {
+        item.addEventListener('click', () => {
+            contractSubTabItems.forEach(tab => tab.classList.remove('active'));
+            item.classList.add('active');
+
+            contractSubTabPanes.forEach(pane => pane.classList.remove('active'));
+
+            const subTabId = item.getAttribute('data-subtab');
+            const targetSubTab = document.getElementById(subTabId);
+            if (targetSubTab) {
+                targetSubTab.classList.add('active');
+            }
+        });
+    });
+
     // Theme Switch
     const themeBtns = document.querySelectorAll('.theme-btn');
     const toggleTheme = (theme) => {

@@ -215,7 +215,7 @@ body {
     padding-bottom: 1rem;
 }
 
-.sub-tab-item {
+.sub-tab-item, .contract-sub-tab-item {
     background: none;
     border: none;
     padding: 0.5rem 1rem;
@@ -227,16 +227,16 @@ body {
     transition: var(--transition);
 }
 
-.sub-tab-item:hover {
+.sub-tab-item:hover, .contract-sub-tab-item:hover {
     color: var(--ks-blue);
 }
 
-.sub-tab-item.active {
+.sub-tab-item.active, .contract-sub-tab-item.active {
     color: var(--ks-blue);
     font-weight: 700;
 }
 
-.sub-tab-item.active::after {
+.sub-tab-item.active::after, .contract-sub-tab-item.active::after {
     content: '';
     position: absolute;
     bottom: -17px;
@@ -247,11 +247,11 @@ body {
     border-radius: 3px 3px 0 0;
 }
 
-.sub-tab-pane {
+.sub-tab-pane, .contract-sub-tab-pane {
     display: none;
 }
 
-.sub-tab-pane.active {
+.sub-tab-pane.active, .contract-sub-tab-pane.active {
     display: block;
     animation: fadeIn 0.3s ease;
 }
