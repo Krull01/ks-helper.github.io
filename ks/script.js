@@ -99,6 +99,70 @@ document.addEventListener('DOMContentLoaded', () => {
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
     const storage = firebase.storage();
+    const auth = firebase.auth();
+
+    // === ЛОГИКА АВТОРИЗАЦИИ ===
+    const loginScreen = document.getElementById('login-screen');
+    const loginForm = document.getElementById('login-form');
+    const authError = document.getElementById('auth-error');
+    const btnLogin = document.getElementById('btn-login');
+    const logoutBtn = document.getElementById('logout-btn');
+    const authOnlyElements = document.querySelectorAll('.auth-only');
+
+    // Слушатель состояния авторизации
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            // Пользователь вошел
+            loginScreen.style.display = 'none';
+            authOnlyElements.forEach(el => {
+                // Если это навигация или кнопка выхода, используем flex/inline-block, иначе block
+                if (el.classList.contains('main-nav')) el.style.display = 'flex';
+                else if (el.classList.contains('logout-btn')) el.style.display = 'inline-block';
+                else el.style.display = 'block';
+            });
+            console.log("Auth: User logged in", user.email);
+        } else {
+            // Пользователь не вошел
+            loginScreen.style.display = 'flex';
+            authOnlyElements.forEach(el => el.style.display = 'none');
+            console.log("Auth: No user");
+        }
+    });
+
+    // Обработка формы
+    if (loginForm) {
+        loginForm.onsubmit = async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            btnLogin.disabled = true;
+            btnLogin.textContent = '...';
+            authError.textContent = '';
+
+            try {
+                await auth.signInWithEmailAndPassword(email, password);
+            } catch (error) {
+                console.error("Auth error:", error);
+                let msg = error.message;
+                if (error.code === 'auth/wrong-password') msg = currentLang === 'ru' ? 'Неверный пароль' : 'Невірний пароль';
+                if (error.code === 'auth/user-not-found') msg = currentLang === 'ru' ? 'Пользователь не найден' : 'Користувач не знайдений';
+                authError.textContent = msg;
+            } finally {
+                btnLogin.disabled = false;
+                btnLogin.textContent = currentLang === 'ru' ? 'Войти' : 'Увійти';
+            }
+        };
+    }
+
+    // Выход
+    if (logoutBtn) {
+        logoutBtn.onclick = () => {
+            if (confirm(currentLang === 'ru' ? 'Выйти из системы?' : 'Вийти з системи?')) {
+                auth.signOut();
+            }
+        };
+    }
 
     let housesData = [];
     let isDataLoading = false;

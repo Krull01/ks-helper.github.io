@@ -640,6 +640,116 @@ body {
 }
 
 /* ========================================= */
+/* Login Screen                              */
+/* ========================================= */
+.login-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.login-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    animation: fadeIn 0.5s ease;
+}
+
+.login-logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--ks-blue);
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.login-card h2 {
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.login-card p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+    background: var(--bg-color);
+    color: var(--text-main);
+}
+
+.form-group input:focus {
+    border-color: var(--ks-blue);
+    box-shadow: 0 0 0 3px rgba(0, 149, 217, 0.1);
+}
+
+.auth-error {
+    color: #FF3B30;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    min-height: 1.2rem;
+}
+
+.auth-toggle {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+body.dark-theme .login-screen {
+    background: #121212;
+}
+
+body.dark-theme .login-card {
+    background: #1E1E1E;
+    border-color: #333333;
+}
+
+body.dark-theme .form-group input {
+    background: #2D2D2D;
+    border-color: #444444;
+}
+
+.logout-btn:hover {
+    background: rgba(255,255,255,0.1) !important;
+    border-color: white !important;
+}
+
+/* ========================================= */
 /* Таблицы (для раздела Мастер)              */
 /* ========================================= */
 .table-responsive {
