@@ -266,19 +266,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             if (window.location.protocol === 'file:') {
-                throw new Error('FILE_PROTOCOL_RESTRICTION');
+                console.warn('Running locally. Excel parsing might fail, but Firebase will work.');
             }
 
-            const response = await fetch('houses.xlsx');
-            if (!response.ok) throw new Error(`HTTP_ERROR_${response.status}`);
-
-            const arrayBuffer = await response.arrayBuffer();
-            const data = new Uint8Array(arrayBuffer);
-            const workbook = XLSX.read(data, { type: 'array' });
-            const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-            const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-
-            const baseHouses = parseExcelRows(jsonData);
+            let baseHouses = [];
+            try {
+                const response = await fetch('houses.xlsx');
+                if (response.ok) {
+                    const arrayBuffer = await response.arrayBuffer();
+                    const data = new Uint8Array(arrayBuffer);
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+                    const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+                    baseHouses = parseExcelRows(jsonData);
+                } else {
+                    console.log('houses.xlsx missing, falling back to Firebase completely');
+                }
+            } catch (e) {
+                console.log('houses.xlsx fetch error:', e.message);
+            }
 
             // Подгружаем дома из коллекции основной базы И кастомные дома
             try {
