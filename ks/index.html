@@ -32,7 +32,8 @@
                 <button class="theme-btn active" data-theme="light">☀️</button>
                 <button class="theme-btn" data-theme="dark">🌙</button>
             </div>
-            <button id="logout-btn" class="logout-btn auth-only" style="display: none; background: none; border: 1px solid rgba(255,255,255,0.3); color: white; padding: 4px 10px; border-radius: 12px; cursor: pointer; font-size: 0.8rem;">Выйти</button>
+            <button id="logout-btn" class="logout-btn auth-only"
+                style="display: none; background: none; border: 1px solid rgba(255,255,255,0.3); color: white; padding: 4px 10px; border-radius: 12px; cursor: pointer; font-size: 0.8rem;">Выйти</button>
         </div>
     </header>
 
@@ -52,7 +53,8 @@
                     <input type="password" id="login-password" required placeholder="••••••••">
                 </div>
                 <div id="auth-error" class="auth-error"></div>
-                <button type="submit" id="btn-login" class="btn-primary" style="width: 100%; margin-top: 1rem; height: 50px;">Войти</button>
+                <button type="submit" id="btn-login" class="btn-primary"
+                    style="width: 100%; margin-top: 1rem; height: 50px;">Войти</button>
             </form>
         </div>
     </div>
@@ -123,7 +125,7 @@
                                 <!-- ЛЕГКИЙ FMC -->
                                 <div class="card">
                                     <h3>ВСЕ РАЗОМ Легкий FMC</h3>
-                                    <div class="price">350 <span>грн/міс</span></div>
+                                    <div class="price">450 <span>грн/міс</span></div>
                                     <ul class="features">
                                         <li><strong>Домашній інтернет:</strong> 1 Гбіт/с</li>
                                         <li><strong>Київстар ТБ:</strong> При підключенні Суперсили</li>
@@ -163,21 +165,22 @@
                         <div id="prosto-di" class="sub-tab-pane">
                             <div class="cards-grid">
 
-                                <!-- БАЗОВЫЙ (Бывший УДАЧА) -->
+                                <!-- БАЗОВИЙ -->
                                 <div class="card">
-                                    <h3>Базовый</h3>
+                                    <h3>БАЗОВИЙ</h3>
                                     <div class="price">200 <span>грн/міс</span></div>
                                     <div class="promo-banner"
                                         style="margin-bottom: 1rem; padding: 0.5rem; font-size: 0.85rem;">
-                                        <strong>Акція:</strong> 100 грн/міс на перші 6 місяців!
+                                        <strong>Вартість при підключенні:</strong> 100 грн/міс на 6 місяців користування
                                     </div>
                                     <ul class="features">
                                         <li><strong>Швидкість:</strong> 100 Мбіт/с</li>
-                                        <li><em>Ознайомчий доступ до 1 Гбіт/с (міс. підкл. + 2 міс)</em></li>
+                                        <li><em>Ознайомчий доступ до швидкості 1 Гбіт/с</em></li>
                                         <li><strong>Київстар ТБ:</strong> Безкоштовний пакет «Легкий Домашній»</li>
+                                        <li><strong>Статична IP:</strong> Як додаткова послуга за 70 грн/міс</li>
                                     </ul>
                                     <div class="supersila">
-                                        <strong>Додатково:</strong> Тільки для нового підключення.
+                                        <strong>Додаткові умови:</strong> Тільки для нового підключення
                                     </div>
                                 </div>
 
@@ -187,16 +190,17 @@
                                     <div class="price">200 <span>грн/міс</span></div>
                                     <div class="promo-banner"
                                         style="margin-bottom: 1rem; padding: 0.5rem; font-size: 0.85rem; background: rgba(0, 149, 217, 0.05);">
-                                        <strong>Оплата:</strong> 1200 грн розраховується раз на 6 місяців.
+                                        <strong>Оплата:</strong> 1200 грн - сума, яка має бути на рахунку кожні 6 міс
                                     </div>
                                     <ul class="features">
                                         <li><strong>Швидкість:</strong> 100 Мбіт/с</li>
-                                        <li><em>Ознайомчий доступ до 1 Гбіт/с (міс. підкл. + 2 міс)</em></li>
-                                        <li><strong>Київстар ТБ:</strong> За умови вибору Суперсили КС ТБ</li>
+                                        <li><em>Ознайомчий доступ до швидкості 1 Гбіт/с</em></li>
+                                        <li><strong>Суперсила:</strong> 1 на вибір: Київстар ТБ, Гігабіт</li>
+                                        <li><strong>Київстар ТБ:</strong> Суперсила Київстар ТБ</li>
+                                        <li><strong>Статична IP:</strong> Як додаткова послуга за 70 грн/міс</li>
                                     </ul>
                                     <div class="supersila">
-                                        <strong>1 Суперсила на вибір:</strong> Київстар ТБ або Гігабіт.<br>
-                                        <em>Тільки для нового підключення.</em>
+                                        <strong>Додаткові умови:</strong> Тільки для нового підключення
                                     </div>
                                 </div>
 
@@ -207,52 +211,56 @@
                                     <div class="price">165 <span>грн/міс</span></div>
                                     <div class="promo-banner"
                                         style="margin-bottom: 1rem; padding: 0.5rem; font-size: 0.85rem; background: rgba(0, 149, 217, 0.05);">
-                                        <strong>Оплата:</strong> 1980 грн розраховується раз на 12 місяців.
+                                        <strong>Оплата:</strong> 1980 грн - сума, яка має бути на рахунку кожні 12 міс
                                     </div>
                                     <ul class="features">
                                         <li><strong>Швидкість:</strong> 100 Мбіт/с</li>
-                                        <li><em>Ознайомчий доступ до 1 Гбіт/с (міс. підкл. + 2 міс)</em></li>
-                                        <li><strong>Київстар ТБ:</strong> За умови вибору Суперсили КС ТБ</li>
+                                        <li><em>Ознайомчий доступ до швидкості 1 Гбіт/с</em></li>
+                                        <li><strong>Суперсила:</strong> 1 на вибір: Київстар ТБ, Гігабіт</li>
+                                        <li><strong>Київстар ТБ:</strong> Суперсила Київстар ТБ</li>
+                                        <li><strong>Статична IP:</strong> Як додаткова послуга за 70 грн/міс</li>
                                     </ul>
                                     <div class="supersila">
-                                        <strong>1 Суперсила на вибір:</strong> Київстар ТБ або Гігабіт.<br>
-                                        <em>Тільки для нового підключення.</em>
+                                        <strong>Додаткові умови:</strong> Тільки для нового підключення
                                     </div>
                                 </div>
 
                                 <!-- ОПТИМАЛЬНИЙ -->
                                 <div class="card">
-                                    <h3>Оптимальний</h3>
+                                    <h3>ОПТИМАЛЬНИЙ</h3>
                                     <div class="price">350 <span>грн/міс</span></div>
                                     <div class="promo-banner"
                                         style="margin-bottom: 1rem; padding: 0.5rem; font-size: 0.85rem;">
-                                        <strong>Акція «Легкий старт»:</strong> 200 грн/міс (місяць підкл. + 2 наступні).
+                                        <strong>Акція:</strong> 200 грн/міс (місяць підключення + 2 календарні місяці)
                                     </div>
                                     <ul class="features">
-                                        <li><strong>Швидкість:</strong> до 300 Мбіт/с</li>
-                                        <li><strong>Київстар ТБ:</strong> За умови вибору Суперсили КС ТБ</li>
+                                        <li><strong>Швидкість:</strong> 300 Мбіт/с</li>
+                                        <li><strong>Суперсила:</strong> Київстар ТБ</li>
+                                        <li><strong>Київстар ТБ:</strong> Суперсила Київстар ТБ</li>
+                                        <li><strong>Статична IP:</strong> Як додаткова послуга за 70 грн/міс</li>
                                     </ul>
                                     <div class="supersila">
-                                        <strong>Суперсила включена:</strong> Суперсила КС ТБ.
+                                        <strong>Додаткові умови:</strong> Доступні для нового підключення та зміни тарифу
                                     </div>
                                 </div>
 
                                 <!-- КОМФОРТНИЙ -->
                                 <div class="card">
                                     <div class="card-badge">Гігабіт</div>
-                                    <h3>Комфортний</h3>
+                                    <h3>КОМФОРТНИЙ</h3>
                                     <div class="price">450 <span>грн/міс</span></div>
                                     <div class="promo-banner"
                                         style="margin-bottom: 1rem; padding: 0.5rem; font-size: 0.85rem;">
-                                        <strong>Акція «Легкий старт»:</strong> 200 грн/міс (місяць підкл. + 2 наступні).
+                                        <strong>Акція:</strong> 200 грн/міс (місяць підключення + 2 календарні місяці)
                                     </div>
                                     <ul class="features">
-                                        <li><strong>Швидкість:</strong> до 1 Гбіт/с</li>
-                                        <li><strong>Київстар ТБ:</strong> За умови вибору Суперсили КС ТБ</li>
-                                        <li><strong>Статична IP:</strong> Безкоштовне підключення IP-адреси</li>
+                                        <li><strong>Швидкість:</strong> 1 Гбіт/с</li>
+                                        <li><strong>Суперсила:</strong> Київстар ТБ</li>
+                                        <li><strong>Київстар ТБ:</strong> Суперсила Київстар ТБ</li>
+                                        <li><strong>Статична IP:</strong> Доступна за 0 грн/міс</li>
                                     </ul>
                                     <div class="supersila">
-                                        <strong>Суперсила включена:</strong> Суперсила КС ТБ.
+                                        <strong>Додаткові умови:</strong> Доступні для нового підключення та зміни тарифу
                                     </div>
                                 </div>
 
@@ -261,16 +269,144 @@
                     </div>
                 </div>
                 <div id="contract-tariffs" class="tab-pane">
-                    <div class="promo-banner" style="text-align: left;">
-                        <h3 style="color: var(--ks-blue-dark); margin-bottom: 0.5rem; font-size: 1.1rem;">ПЕРЕЛІК
-                            АРХІВНИХ ТАРИФІВ, В ЯКИХ МОЖЛИВО ПІДКЛЮЧИТИ СУПЕРСИЛУ ДОМАШНІЙ ІНТЕРНЕТ КОНТРАКТ</h3>
-                        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Окрім доступних для підключення ТП контракт
-                            (шляхом НКП, міграції чи зміни ТП) Суперсила ДІ доступна в ряді архівних ТП.</p>
-                        <p style="font-size: 0.9rem;"><strong>Тобто, якщо абонента по номеру вже підключений вказаний
-                                ТП, то він має можливість підключити Суперсилу ДІ.</strong></p>
+                    <div class="sub-tabs">
+                        <button class="contract-sub-tab-item active" data-subtab="public-contract">Публічні</button>
+                        <button class="contract-sub-tab-item" data-subtab="archive-contract">Архівні</button>
                     </div>
 
-                    <div class="cards-grid">
+                    <div class="sub-tab-content">
+                        <!-- ПУБЛІЧНІ КОНТРАКТНІ ТАРИФИ -->
+                        <div id="public-contract" class="contract-sub-tab-pane active">
+                            <div class="promo-banner" style="text-align: center; margin-bottom: 1.5rem;">
+                                <h3 style="color: var(--ks-blue-dark); font-size: 1.1rem; text-transform: uppercase;">ПУБЛІЧНІ ТАРИФИ ПО ДОГОВОРУ (ММС) з безкоштовною послугою ДОМАШНІЙ ІНТЕРНЕТ</h3>
+                            </div>
+                            
+                            <div class="cards-grid">
+                                <!-- Все разом Комфорт. Домашній (соціальний) -->
+                                <div class="card contract-card">
+                                    <h3>Все разом Комфорт.<br>Домашній (соціальний)</h3>
+                                    <div class="price">220 <span>грн/міс</span></div>
+                                    <ul class="features">
+                                        <li><strong>Мобільний інтернет:</strong> 10 ГБ</li>
+                                        <li><strong>Дзвінки в мережі:</strong> БЕЗЛІМ</li>
+                                        <li><strong>Дзвінки по Україні:</strong> 100 хв</li>
+                                        <li><strong>Домашній інтернет:</strong> 100 Мбіт/с (Ознайомчий доступ до 1 Гбіт/с)</li>
+                                    </ul>
+                                    <div class="supersila">
+                                        <strong>1 Суперсила на вибір:</strong><br>
+                                        5 ГБ у роумінгу, Відео на ходу, Соцмережі та месенджери, 100 хв на інші мережі та за кордон, HELSY, WOG, Додатковий номер.
+                                    </div>
+                                </div>
+
+                                <!-- Легкий Контракт -->
+                                <div class="card contract-card">
+                                    <div class="card-badge">ВСЕ РАЗОМ</div>
+                                    <h3>Легкий Контракт</h3>
+                                    <div class="price">370 <span>грн/міс</span></div>
+                                    <ul class="features">
+                                        <li><strong>Мобільний інтернет:</strong> 40 ГБ (з них 15 ГБ в Роумінгу)</li>
+                                        <li><strong>Дзвінки в мережі:</strong> БЕЗЛІМ</li>
+                                        <li><strong>Дзвінки на інші мережі та за кордон:</strong> 300 хв</li>
+                                        <li><strong>SMS:</strong> 300 шт</li>
+                                        <li><strong>Домашній інтернет:</strong> 300 Мбіт/с (Ознайомчий доступ до 1 Гбіт/с)</li>
+                                        <li><strong>SIM для роутера:</strong> За стандартну вартість</li>
+                                    </ul>
+                                    <div class="supersila">
+                                        <strong>2 Суперсили на вибір:</strong><br>
+                                        Київстар ТБ, 5 ГБ у роумінгу, SIM для планшета, SIM для другого телефона, Відео на ходу, Соцмережі та месенджери, HELSY, WOG, Додатковий номер.
+                                    </div>
+                                </div>
+
+                                <!-- Легкий Контракт (MNP)* -->
+                                <div class="card contract-card">
+                                    <div class="card-badge">MNP</div>
+                                    <h3>Легкий Контракт (MNP)*</h3>
+                                    <div class="price">290 <span>грн/міс</span></div>
+                                    <ul class="features">
+                                        <li><strong>Мобільний інтернет:</strong> Безлім (після 100 ГБ - 0,8 Мбіт/с)</li>
+                                        <li><strong>Дзвінки в мережі:</strong> БЕЗЛІМ</li>
+                                        <li><strong>Дзвінки на інші мережі та за кордон:</strong> 300 хв</li>
+                                        <li><strong>SMS:</strong> 300 шт</li>
+                                        <li><strong>Домашній інтернет:</strong> 300 Мбіт/с (Ознайомчий доступ до 1 Гбіт/с)</li>
+                                        <li><strong>SIM для роутера:</strong> За стандартну вартість</li>
+                                    </ul>
+                                    <div class="supersila">
+                                        <strong>2 Суперсили на вибір:</strong><br>
+                                        Київстар ТБ, 5 ГБ у роумінгу, SIM для планшета, SIM для другого телефона, HELSY, WOG, Додатковий номер.
+                                    </div>
+                                </div>
+
+                                <!-- Крутий Контракт -->
+                                <div class="card contract-card">
+                                    <div class="card-badge">ВСЕ РАЗОМ</div>
+                                    <h3>Крутий Контракт</h3>
+                                    <div class="price">450 <span>грн/міс</span></div>
+                                    <ul class="features">
+                                        <li><strong>Мобільний інтернет:</strong> Безлім (після 100 ГБ - 0,8 Мбіт/с)</li>
+                                        <li><strong>Дзвінки в мережі:</strong> БЕЗЛІМ</li>
+                                        <li><strong>Дзвінки на інші мережі та за кордон:</strong> 600 хв</li>
+                                        <li><strong>SMS:</strong> 600 шт</li>
+                                        <li><strong>Домашній інтернет:</strong> 1 Гбіт/с</li>
+                                        <li><strong>SIM для роутера:</strong> Доступно</li>
+                                    </ul>
+                                    <div class="supersila">
+                                        <strong>2 Суперсили на вибір:</strong><br>
+                                        Київстар ТБ, 5 ГБ у роумінгу, SIM для планшета, SIM для другого телефона, HELSY, WOG, Додатковий номер.
+                                    </div>
+                                </div>
+
+                                <!-- Крутий Контракт (MNP)* -->
+                                <div class="card contract-card">
+                                    <div class="card-badge">MNP</div>
+                                    <h3>Крутий Контракт (MNP)*</h3>
+                                    <div class="price">350 <span>грн/міс</span></div>
+                                    <ul class="features">
+                                        <li><strong>Мобільний інтернет:</strong> Безлім (після 100 ГБ - 0,8 Мбіт/с)</li>
+                                        <li><strong>Дзвінки в мережі:</strong> БЕЗЛІМ</li>
+                                        <li><strong>Дзвінки на інші мережі та за кордон:</strong> 600 хв</li>
+                                        <li><strong>SMS:</strong> 600 шт</li>
+                                        <li><strong>Домашній інтернет:</strong> 1 Гбіт/с</li>
+                                        <li><strong>SIM для роутера:</strong> Доступно</li>
+                                    </ul>
+                                    <div class="supersila">
+                                        <strong>2 Суперсили на вибір:</strong><br>
+                                        Київстар ТБ, 5 ГБ у роумінгу, SIM для планшета, SIM для другого телефона, HELSY, WOG, Додатковий номер.
+                                    </div>
+                                </div>
+
+                                <!-- Топовий -->
+                                <div class="card contract-card">
+                                    <div class="card-badge">ТОП</div>
+                                    <h3>Топовий</h3>
+                                    <div class="price">750 <span>грн/міс</span></div>
+                                    <ul class="features">
+                                        <li><strong>Мобільний інтернет:</strong> Безлім</li>
+                                        <li><strong>Дзвінки в мережі:</strong> БЕЗЛІМ</li>
+                                        <li><strong>Дзвінки на інші мережі та за кордон:</strong> 1500 хв</li>
+                                        <li><strong>SMS:</strong> 1500 шт</li>
+                                        <li><strong>Домашній інтернет:</strong> 1 Гбіт/с</li>
+                                        <li><strong>SIM для роутера:</strong> Доступно</li>
+                                    </ul>
+                                    <div class="supersila">
+                                        <strong>2 Суперсили на вибір:</strong><br>
+                                        Київстар ТБ, 5 ГБ у роумінгу, SIM для планшета, WOG, Додатковий номер.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- АРХІВНІ КОНТРАКТНІ ТАРИФИ -->
+                        <div id="archive-contract" class="contract-sub-tab-pane">
+                            <div class="promo-banner" style="text-align: left;">
+                                <h3 style="color: var(--ks-blue-dark); margin-bottom: 0.5rem; font-size: 1.1rem;">ПЕРЕЛІК
+                                    АРХІВНИХ ТАРИФІВ, В ЯКИХ МОЖЛИВО ПІДКЛЮЧИТИ СУПЕРСИЛУ ДОМАШНІЙ ІНТЕРНЕТ КОНТРАКТ</h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Окрім доступних для підключення ТП контракт
+                                    (шляхом НКП, міграції чи зміни ТП) Суперсила ДІ доступна в ряді архівних ТП.</p>
+                                <p style="font-size: 0.9rem;"><strong>Тобто, якщо абонента по номеру вже підключений вказаний
+                                        ТП, то він має можливість підключити Суперсилу ДІ.</strong></p>
+                            </div>
+
+                            <div class="cards-grid">
                         <!-- Магніт -->
                         <div class="card contract-card">
                             <div class="card-badge">для MNP</div>
@@ -378,6 +514,8 @@
                                 <strong>2 Суперсили на вибір:</strong><br>
                                 <em>Домашній Інтернет 100 Мбіт/с (Ознайомчий доступ до 1 Гбіт/с на 3 міс.)</em><br><br>
                                 На вибір: Київстар ТБ, SIM для планшета, SIM для другого телефону, 5 ГБ у роумінгу.
+                            </div>
+                        </div>
                             </div>
                         </div>
                     </div>
@@ -502,9 +640,14 @@
                                 <strong>Женя Ворона</strong>
                                 <a href="tel:+380967278772" class="call-btn">📞 +380 96 727 87 72</a>
                             </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
                                 <strong>Артем Пономарев</strong>
                                 <a href="tel:+380969717969" class="call-btn">📞 +380 96 971 79 69</a>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <strong>Саша Вьюнник</strong>
+                                <a href="tel:+380678120102" class="call-btn">📞 +380 67 812 01 02</a>
                             </div>
                         </div>
                     </div>
