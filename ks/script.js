@@ -417,6 +417,49 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
+    const newHouseStreetInput = document.getElementById('new-house-street');
+    const newHouseSuggestions = document.getElementById('new-house-suggestions');
+
+    if (newHouseStreetInput && newHouseSuggestions) {
+        newHouseStreetInput.oninput = function() {
+            const val = this.value.toLowerCase().trim();
+            newHouseSuggestions.innerHTML = '';
+            
+            if (!val) { 
+                newHouseSuggestions.style.display = 'none'; 
+                return; 
+            }
+
+            const uniqueStreets = [...new Set(housesData.map(h => h.street))];
+            const valWords = val.split(/\s+/).filter(w => w.length > 0);
+            
+            const suggestions = uniqueStreets.filter(s => {
+                const sLower = s.toLowerCase();
+                return valWords.every(w => sLower.includes(w));
+            }).slice(0, 10);
+            
+            suggestions.forEach(s => {
+                const div = document.createElement('div');
+                div.className = 'suggestion-item';
+                div.textContent = s;
+                div.onclick = () => {
+                    newHouseStreetInput.value = s;
+                    newHouseSuggestions.style.display = 'none';
+                    document.getElementById('new-house-number').focus();
+                };
+                newHouseSuggestions.appendChild(div);
+            });
+
+            newHouseSuggestions.style.display = newHouseSuggestions.childElementCount > 0 ? 'block' : 'none';
+        };
+
+        document.addEventListener('click', (e) => {
+            if (!newHouseStreetInput.contains(e.target) && !newHouseSuggestions.contains(e.target)) {
+                newHouseSuggestions.style.display = 'none';
+            }
+        });
+    }
+
     function clearAddHouseForm() {
         ['new-house-street', 'new-house-number', 'new-house-ods', 'new-house-key', 'new-house-comment'].forEach(id => {
             const el = document.getElementById(id);
