@@ -589,47 +589,115 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!val) { houseSuggestions.style.display = 'none'; return; }
 
         let suggestions = [];
+        const uniqueStreets = [...new Set(housesData.map(h => h.street))];
+        const sortedStreets = [...uniqueStreets].sort((a, b) => b.length - a.length);
         
-        // Разбиваем ввод на возможную улицу и номер дома (по пробелу)
-        const parts = val.split(' ');
-        const inputStreet = parts[0];
-        const inputHouse = parts.slice(1).join(' ');
+        let matchedStreet = null;
+        let housePart = '';
 
-        if (parts.length === 1) {
-            // Подсказываем только уникальные улицы
-            const uniqueStreets = [...new Set(housesData.map(h => h.street))];
-            suggestions = uniqueStreets
-                .filter(s => s.toLowerCase().includes(inputStreet))
-                .slice(0, 10);
+        // Проверяем точное совпадение начала ввода с названием улицы
+        for (let street of sortedStreets) {
+            const streetLower = street.toLowerCase();
+            if (val === streetLower) {
+                matchedStreet = street;
+                housePart = '';
+                break;
+            } else if (val.startsWith(streetLower + ' ')) {
+                matchedStreet = street;
+                housePart = val.substring(streetLower.length + 1).trim();
+                break;
+            }
+        }
+
+        const valWords = val.split(/\s+/).filter(w => w.length > 0);
+
+        if (matchedStreet) {
+            // Если улица найдена, предлагаем номера домов
+            const streetHouses = housesData.filter(h => h.street === matchedStreet);
+            const houseNumbers = [...new Set(streetHouses.map(h => h.house))];
             
-            suggestions.forEach(s => {
+            let filteredHouses = houseNumbers;
+            if (housePart) {
+                filteredHouses = houseNumbers.filter(n => n.toLowerCase().startsWith(housePart.toLowerCase()));
+            }
+
+            // Сортируем номера домов по возрастанию (учитывая буквы)
+            filteredHouses.sort((a, b) => a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'}));
+
+            suggestions = filteredHouses.slice(0, 15);
+            
+            suggestions.forEach(n => {
                 const div = document.createElement('div');
                 div.className = 'suggestion-item';
-                div.textContent = s;
+                div.innerHTML = `<strong>${matchedStreet}</strong> ${n}`;
                 div.onclick = () => {
-                    houseSearchInput.value = s + ' '; // Добавляем пробел для перехода к номерам домов
-                    houseSearchInput.focus();
-                    houseSearchInput.dispatchEvent(new Event('input'));
+                    houseSearchInput.value = `${matchedStreet} ${n}`;
+                    houseSuggestions.style.display = 'none';
+                    document.getElementById('house-search-btn').click();
                 };
                 houseSuggestions.appendChild(div);
             });
         } else {
-            // Подсказываем номера домов для конкретной улицы
-            const streetMatches = housesData.filter(h => h.street.toLowerCase() === inputStreet);
-            if (streetMatches.length > 0) {
-                const houseNumbers = [...new Set(streetMatches.map(h => h.house))];
-                suggestions = houseNumbers
-                    .filter(n => n.toLowerCase().startsWith(inputHouse))
-                    .slice(0, 15);
+            // Если улица не найдена целиком, проверим последнее слово на цифры (вдруг это дом)
+            const lastWord = valWords[valWords.length - 1] || '';
+            const hasDigits = /\d/.test(lastWord);
+            
+            if (hasDigits && valWords.length > 1) {
+                const streetWords = valWords.slice(0, -1);
+                const possibleStreets = uniqueStreets.filter(s => {
+                    const sLower = s.toLowerCase();
+                    return streetWords.every(w => sLower.includes(w));
+                });
+
+                if (possibleStreets.length === 1) {
+                    const matched = possibleStreets[0];
+                    const streetHouses = housesData.filter(h => h.street === matched);
+                    const houseNumbers = [...new Set(streetHouses.map(h => h.house))];
+                    
+                    let filteredHouses = houseNumbers.filter(n => n.toLowerCase().startsWith(lastWord.toLowerCase()));
+                    filteredHouses.sort((a, b) => a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'}));
+                    
+                    suggestions = filteredHouses.slice(0, 15);
+                    suggestions.forEach(n => {
+                        const div = document.createElement('div');
+                        div.className = 'suggestion-item';
+                        div.innerHTML = `<strong>${matched}</strong> ${n}`;
+                        div.onclick = () => {
+                            houseSearchInput.value = `${matched} ${n}`;
+                            houseSuggestions.style.display = 'none';
+                            document.getElementById('house-search-btn').click();
+                        };
+                        houseSuggestions.appendChild(div);
+                    });
+                } else {
+                    suggestions = possibleStreets.slice(0, 10);
+                    suggestions.forEach(s => {
+                        const div = document.createElement('div');
+                        div.className = 'suggestion-item';
+                        div.textContent = s;
+                        div.onclick = () => {
+                            houseSearchInput.value = s + ' ';
+                            houseSearchInput.focus();
+                            houseSearchInput.dispatchEvent(new Event('input'));
+                        };
+                        houseSuggestions.appendChild(div);
+                    });
+                }
+            } else {
+                // Обычный поиск по улице
+                suggestions = uniqueStreets.filter(s => {
+                    const sLower = s.toLowerCase();
+                    return valWords.every(w => sLower.includes(w));
+                }).slice(0, 10);
                 
-                suggestions.forEach(n => {
+                suggestions.forEach(s => {
                     const div = document.createElement('div');
                     div.className = 'suggestion-item';
-                    div.innerHTML = `<strong>${inputStreet}</strong> ${n}`;
+                    div.textContent = s;
                     div.onclick = () => {
-                        houseSearchInput.value = `${streetMatches[0].street} ${n}`;
-                        houseSuggestions.style.display = 'none';
-                        document.getElementById('house-search-btn').click();
+                        houseSearchInput.value = s + ' ';
+                        houseSearchInput.focus();
+                        houseSearchInput.dispatchEvent(new Event('input'));
                     };
                     houseSuggestions.appendChild(div);
                 });
