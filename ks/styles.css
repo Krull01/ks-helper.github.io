@@ -404,6 +404,27 @@ body {
     font-size: 0.9rem;
 }
 
+/* Call Buttons */
+.call-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #EAF5FD;
+    color: var(--ks-blue);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    width: 165px;
+    transition: var(--transition);
+}
+
+.call-btn:hover {
+    background: var(--ks-blue);
+    color: var(--white);
+}
+
 /* Search Container */
 .search-container {
     display: flex;
