@@ -1,282 +1,142 @@
-const schedule2026_04 = {
-    "Устименко Ю.": [
-        "off",  // 1
-        "10-19",  // 2
-        "off", // 3
-        "off",   // 4
-        "9-18", // 5
-        "9-18",   // 6
-        "11-20",  // 7
-        "10-19", // 8
-        "off",  // 9
-        "10-19",  // 10
-        "off",   // 11
-        "9-18",   // 12
-        "9-18",   // 13
-        "11-20",  // 14
-        "9-18",  // 15
-        "off",  // 16
-        "off",  // 17
-        "11-20", // 18
-        "9-18",   // 19
-        "off",   // 20
-        "off", // 21
-        "off",   // 22
-        "off",  // 23
-        "off",  // 24
-        "off", // 25
-        "9-18",   // 26
-        "9-18", // 27
-        "9-18",  // 28
-        "9-18", // 29
-        "10-19",  // 30
-        "off"    // 31
-    ],
-    "Стосяк А.": [
-        "off",  // 1
-        "10-19",  // 2
-        "10-19", // 3
-        "9-18",   // 4
-        "off",   // 5
-        "9-18",  // 6
-        "9-18",  // 7
-        "10-19",  // 8
-        "off",  // 9
-        "off", // 10
-        "9-18",   // 11
-        "11-20",   // 12
-        "off",   // 13
-        "9-18",  // 14
-        "9-18",   // 15
-        "10-19",  // 16
-        "off",  // 17
-        "9-18",   // 18
-        "11-20",   // 19
-        "9-18", // 20
-        "off",  // 21
-        "9-18",  // 22
-        "off",   // 23
-        "10-19",  // 24
-        "off", // 25
-        "11-20",   // 26
-        "9-18",  // 27
-        "off",  // 28
-        "off",  // 29
-        "off", // 30
-        "off"    // 31
-    ],
-    "Піддубцева Ю.": [
-        "off", // 1
-        "off",  // 2
-        "10-19",  // 3
-        "9-18",   // 4
-        "9-18",  // 5
-        "9-18",   // 6
-        "9-18",  // 7
-        "off",   // 8
-        "off",   // 9
-        "off", // 10
-        "11-20",   // 11
-        "9-18", // 12
-        "9-18",  // 13
-        "off",  // 14
-        "9-18",  // 15
-        "10-19",  // 16
-        "off",  // 17
-        "off",   // 18
-        "9-18", // 19
-        "9-18",  // 20
-        "9-18",  // 21
-        "off",  // 22
-        "off",  // 23
-        "10-19",  // 24
-        "11-20", // 25
-        "9-18",  // 26
-        "9-18",  // 27
-        "9-18",  // 28
-        "9-18",  // 29
-        "off",  // 30
-        "off"    // 31
-    ],
-    "Меделянова Н.": [
-        "off", // 1
-        "off",  // 2
-        "off",  // 3
-        "off",   // 4
-        "11-20",  // 5
-        "9-18",   // 6
-        "9-18",  // 7
-        "10-19",   // 8
-        "10-19",   // 9
-        "off", // 10
-        "9-18",   // 11
-        "9-18", // 12
-        "9-18",  // 13
-        "9-18",  // 14
-        "off",  // 15
-        "off",  // 16
-        "off",  // 17
-        "9-18",   // 18
-        "9-18", // 19
-        "9-18",  // 20
-        "9-18",  // 21
-        "11-20",  // 22
-        "10-19",  // 23
-        "off",  // 24
-        "off", // 25
-        "off",  // 26
-        "9-18",  // 27
-        "9-18",  // 28
-        "11-20",  // 29
-        "10-19",  // 30
-        "off"    // 31
-    ],
-    "Михайленко Ю.": [
-        "10-19",  // 1
-        "off",  // 2
-        "off",  // 3
-        "11-20", // 4
-        "9-18",  // 5
-        "off",  // 6
-        "off",  // 7
-        "10-19", // 8
-        "10-19",  // 9
-        "off",  // 10
-        "off",   // 11
-        "9-18",   // 12
-        "9-18",   // 13
-        "9-18", // 14
-        "11-20",  // 15
-        "off", // 16
-        "10-19",  // 17
-        "off", // 18
-        "9-18", // 19
-        "9-18",  // 20
-        "11-20",  // 21
-        "9-18",   // 22
-        "off",  // 23
-        "off", // 24
-        "9-18",  // 25
-        "9-18",  // 26
-        "9-18", // 27
-        "11-20",  // 28
-        "9-18",  // 29
-        "off",  // 30
-        "10-19"    // 31
-    ],
-    "Папроцька І.": [
-        "10-19",  // 1
-        "10-19", // 2
-        "off", // 3
-        "off", // 4
-        "9-18",  // 5
-        "11-20",  // 6
-        "9-18", // 7
-        "off",  // 8
-        "off",  // 9
-        "10-19",  // 10
-        "off",   // 11
-        "9-18",   // 12
-        "11-20",   // 13
-        "9-18",  // 14
-        "off", // 15
-        "off",  // 16
-        "10-19",  // 17
-        "9-18", // 18
-        "9-18",   // 19
-        "11-20",  // 20
-        "9-18",  // 21
-        "9-18",  // 22
-        "off",  // 23
-        "off",  // 24
-        "9-18",   // 25
-        "9-18",  // 26
-        "11-20",  // 27
-        "off", // 28
-        "off",  // 29
-        "off",  // 30
-        "10-19"    // 31
-    ],
-    "Доброноженко А.": [
-        "10-19",  // 1
-        "off", // 2
-        "off", // 3
-        "9-18", // 4
-        "9-18",  // 5
-        "9-18",  // 6
-        "off", // 7
-        "off",  // 8
-        "off",  // 9
-        "off",  // 10
-        "9-18",   // 11
-        "9-18",   // 12
-        "9-18",   // 13
-        "9-18",  // 14
-        "9-18", // 15
-        "off",  // 16
-        "off",  // 17
-        "off", // 18
-        "9-18",   // 19
-        "9-18",  // 20
-        "9-18",  // 21
-        "11-20",  // 22
-        "10-19",  // 23
-        "off",  // 24
-        "off",   // 25
-        "9-18",  // 26
-        "9-18",  // 27
-        "9-18", // 28
-        "11-20",  // 29
-        "off",  // 30
-        "10-19"    // 31
-    ]
+// =============================================
+// РАСПИСАНИЕ ИНЖЕНЕРОВ
+// =============================================
+// Формат: ключ "YYYY-MM" → объект { "Имя": [массив смен по дням] }
+//
+// Как обновлять (в начале каждого месяца):
+// 1. Скопируйте блок предыдущего месяца
+// 2. Измените ключ на новый месяц (напр. "2026-06")
+// 3. Обновите смены по скриншоту из Excel
+//
+// Значения:
+//   "9-18"  — смена с 9 до 18
+//   "10-19" — смена с 10 до 19
+//   "11-20" — смена с 11 до 20
+//   "off"   — выходной (инженер скрывается из списка)
+// =============================================
+
+const schedules = {
+
+    // ===== МАЙ 2026 =====
+    "2026-05": {
+        "Устименко Ю.": [
+        //  1       2       3       4       5       6       7       8       9       10
+            "off",  "10-19","off",  "off",  "9-18", "9-18", "11-20","10-19","off",  "10-19",
+        //  11      12      13      14      15      16      17      18      19      20
+            "off",  "9-18", "9-18", "11-20","9-18", "off",  "off",  "11-20","9-18", "off",
+        //  21      22      23      24      25      26      27      28      29      30      31
+            "off",  "off",  "off",  "off",  "off",  "9-18", "9-18", "9-18", "9-18", "10-19","off"
+        ],
+        "Стосяк А.": [
+        //  1       2       3       4       5       6       7       8       9       10
+            "off",  "10-19","10-19","9-18", "off",  "9-18", "9-18", "10-19","off",  "off",
+        //  11      12      13      14      15      16      17      18      19      20
+            "9-18", "11-20","off",  "9-18", "9-18", "10-19","off",  "9-18", "11-20","9-18",
+        //  21      22      23      24      25      26      27      28      29      30      31
+            "off",  "9-18", "off",  "10-19","off",  "11-20","9-18", "off",  "off",  "off",  "off"
+        ],
+        "Піддубцева Ю.": [
+        //  1       2       3       4       5       6       7       8       9       10
+            "off",  "off",  "10-19","9-18", "9-18", "9-18", "9-18", "off",  "off",  "off",
+        //  11      12      13      14      15      16      17      18      19      20
+            "11-20","9-18", "9-18", "off",  "9-18", "10-19","off",  "off",  "9-18", "9-18",
+        //  21      22      23      24      25      26      27      28      29      30      31
+            "9-18", "off",  "off",  "10-19","11-20","9-18", "9-18", "9-18", "9-18", "off",  "off"
+        ],
+        "Меделянова Н.": [
+        //  1       2       3       4       5       6       7       8       9       10
+            "off",  "off",  "off",  "off",  "11-20","9-18", "9-18", "10-19","10-19","off",
+        //  11      12      13      14      15      16      17      18      19      20
+            "9-18", "9-18", "9-18", "9-18", "off",  "off",  "off",  "9-18", "9-18", "9-18",
+        //  21      22      23      24      25      26      27      28      29      30      31
+            "9-18", "11-20","10-19","off",  "off",  "off",  "9-18", "9-18", "11-20","10-19","off"
+        ],
+        "Михайленко Ю.": [
+        //  1       2       3       4       5       6       7       8       9       10
+            "10-19","off",  "off",  "11-20","9-18", "off",  "off",  "10-19","10-19","off",
+        //  11      12      13      14      15      16      17      18      19      20
+            "off",  "9-18", "9-18", "9-18", "11-20","off",  "10-19","off",  "9-18", "9-18",
+        //  21      22      23      24      25      26      27      28      29      30      31
+            "11-20","9-18", "off",  "off",  "9-18", "9-18", "9-18", "11-20","9-18", "off",  "10-19"
+        ],
+        "Папроцька І.": [
+        //  1       2       3       4       5       6       7       8       9       10
+            "10-19","10-19","off",  "off",  "9-18", "11-20","9-18", "off",  "off",  "10-19",
+        //  11      12      13      14      15      16      17      18      19      20
+            "off",  "9-18", "11-20","9-18", "off",  "off",  "10-19","9-18", "9-18", "11-20",
+        //  21      22      23      24      25      26      27      28      29      30      31
+            "9-18", "9-18", "off",  "off",  "9-18", "9-18", "11-20","off",  "off",  "off",  "10-19"
+        ],
+        "Доброноженко А.": [
+        //  1       2       3       4       5       6       7       8       9       10
+            "10-19","off",  "off",  "9-18", "9-18", "9-18", "off",  "off",  "off",  "off",
+        //  11      12      13      14      15      16      17      18      19      20
+            "9-18", "9-18", "9-18", "9-18", "9-18", "off",  "off",  "off",  "9-18", "9-18",
+        //  21      22      23      24      25      26      27      28      29      30      31
+            "9-18", "11-20","10-19","off",  "off",  "9-18", "9-18", "9-18", "11-20","off",  "10-19"
+        ]
+    }
+
+    // ===== ИЮНЬ 2026 =====
+    // Раскомментируйте и заполните, когда получите расписание:
+    //
+    // "2026-06": {
+    //     "Устименко Ю.":    ["off", "9-18", ...],
+    //     "Стосяк А.":       ["off", "10-19", ...],
+    //     "Піддубцева Ю.":   ["off", "off", ...],
+    //     "Меделянова Н.":   ["off", "off", ...],
+    //     "Михайленко Ю.":   ["10-19", "off", ...],
+    //     "Папроцька І.":    ["10-19", "10-19", ...],
+    //     "Доброноженко А.": ["10-19", "off", ...]
+    // }
 };
 
+// =============================================
+// ЛОГИКА ОТОБРАЖЕНИЯ (не нужно менять)
+// =============================================
 document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
-    // 0 = January, 4 = May
-    if (today.getMonth() === 4 && today.getFullYear() === 2026) {
-        const dayIndex = today.getDate() - 1; // 1.5 -> index 0
+    const monthKey = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}`;
+    const currentSchedule = schedules[monthKey];
 
-        const engineers = document.querySelectorAll('.engineer-row');
-        engineers.forEach(row => {
-            const engName = row.getAttribute('data-eng');
-            if (schedule2026_04[engName]) {
-                const shift = schedule2026_04[engName][dayIndex];
-                if (shift === "off") {
-                    row.style.display = 'none'; // Hide if off!
-                } else {
-                    // Inject a span indicating their shift
-                    const nameStrong = row.querySelector('strong');
-                    if (nameStrong) {
-                        const shiftBadge = document.createElement('span');
-                        shiftBadge.innerHTML = '&nbsp;🕒&nbsp;' + shift.replace('-', '‑'); // Using non-breaking hyphen just in case
-                        shiftBadge.style.fontSize = '0.8rem';
-                        shiftBadge.style.color = 'var(--ks-blue)';
-                        shiftBadge.style.fontWeight = 'normal';
-                        shiftBadge.style.whiteSpace = 'nowrap';
-                        nameStrong.appendChild(shiftBadge);
-                    }
+    // Если для текущего месяца нет расписания — показываем всех инженеров без смен
+    if (!currentSchedule) {
+        console.warn(`Schedule: нет данных для ${monthKey}. Все инженеры отображаются.`);
+        return;
+    }
+
+    const dayIndex = today.getDate() - 1; // 1-е число → индекс 0
+
+    const engineers = document.querySelectorAll('.engineer-row');
+    engineers.forEach(row => {
+        const engName = row.getAttribute('data-eng');
+        if (currentSchedule[engName]) {
+            const shift = currentSchedule[engName][dayIndex];
+            if (shift === "off" || !shift) {
+                row.style.display = 'none'; // Скрыть выходных
+            } else {
+                // Показать бейдж со сменой
+                const nameStrong = row.querySelector('strong');
+                if (nameStrong) {
+                    const shiftBadge = document.createElement('span');
+                    shiftBadge.innerHTML = '&nbsp;🕒&nbsp;' + shift.replace('-', '‑');
+                    shiftBadge.style.fontSize = '0.8rem';
+                    shiftBadge.style.color = 'var(--ks-blue)';
+                    shiftBadge.style.fontWeight = 'normal';
+                    shiftBadge.style.whiteSpace = 'nowrap';
+                    nameStrong.appendChild(shiftBadge);
                 }
             }
-        });
-
-        // Hide region headers if all engineers below it are offline
-        const ukraineEngineers = document.querySelectorAll('.engineer-row[data-region="ukraine"]');
-        const kharkovEngineers = document.querySelectorAll('.engineer-row[data-region="kharkov"]');
-
-        let ukraineHasOnline = false;
-        ukraineEngineers.forEach(row => { if (row.style.display !== 'none') ukraineHasOnline = true; });
-        if (!ukraineHasOnline) {
-            const uHeader = document.getElementById('header-ukraine');
-            if (uHeader) uHeader.style.display = 'none';
         }
+    });
 
-        let kharkovHasOnline = false;
-        kharkovEngineers.forEach(row => { if (row.style.display !== 'none') kharkovHasOnline = true; });
-        if (!kharkovHasOnline) {
-            const kHeader = document.getElementById('header-kharkov');
-            if (kHeader) kHeader.style.display = 'none';
+    // Скрыть заголовки регионов, если все инженеры в этом регионе выходные
+    ['ukraine', 'kharkov'].forEach(region => {
+        const rows = document.querySelectorAll(`.engineer-row[data-region="${region}"]`);
+        const hasOnline = [...rows].some(row => row.style.display !== 'none');
+        if (!hasOnline) {
+            const header = document.getElementById(`header-${region}`);
+            if (header) header.style.display = 'none';
         }
-    }
+    });
 });

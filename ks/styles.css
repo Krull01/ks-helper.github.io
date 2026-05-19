@@ -19,6 +19,132 @@
     --transition: all 0.3s ease;
 }
 
+/* ========================================= */
+/* Утилитарные классы (вместо inline-стилей) */
+/* ========================================= */
+
+/* Центрированная сетка карточек (ссылки, инженеры) */
+.cards-grid.cards-grid--centered {
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+}
+
+/* Контактная строка (СТП, Инженеры) */
+.contact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.contact-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Контактный блок (внутри карточки ссылок) */
+.contact-block {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Заголовок карточки контактов */
+.contact-card-title {
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Заголовок региона (Украина, Харьков) */
+.region-header {
+    color: var(--ks-blue);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+/* Строка инженера */
+.engineer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.engineer-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Заголовок секции (Внешние системы, Часто задаваемые) */
+.section-subtitle {
+    margin: 2.5rem 0 1.5rem;
+    color: var(--ks-blue-dark);
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+/* Заголовок секции (крупный, для Мастер/Iperf) */
+.section-subtitle--large {
+    margin: 2.5rem 0 1.5rem;
+    color: var(--text-main);
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* Заголовок карточки вопроса (Мастер) */
+.card-section-title {
+    color: var(--ks-blue-dark);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Списки с точками (Iperf инструкция) */
+.list-styled {
+    padding-left: 1.5rem;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    list-style-type: disc;
+}
+
+.list-styled li {
+    margin-bottom: 0.5rem;
+}
+
+/* Превью кода (Iperf команды) */
+.code-preview {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 5px 10px;
+    margin: 5px 0 15px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Обертка контейнера поиска домов */
+.search-bar-wrap {
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+
+/* Форма добавления нового дома */
+.add-house-box {
+    margin-bottom: 2rem;
+    border: 2px solid var(--ks-blue);
+}
+
+.add-house-box h3 {
+    margin-bottom: 1rem;
+    color: var(--ks-blue);
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -1062,183 +1188,6 @@ body.dark-theme .suggestions-list {
 
 body.dark-theme .suggestion-item:hover {
     background: var(--ks-blue);
-}
-
-/* User Feedback Section */
-.user-feedback {
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 2px dashed var(--border-color);
-}
-
-.user-feedback h4 {
-    font-size: 0.9rem;
-    color: var(--ks-blue);
-    margin-bottom: 0.8rem;
-    text-transform: uppercase;
-}
-
-.comment-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 1rem;
-}
-
-.user-comment-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    background: var(--bg-card);
-    color: var(--text-main);
-    resize: vertical;
-}
-
-.photo-upload-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.85rem;
-    color: var(--ks-blue);
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.photo-upload-label:hover {
-    text-decoration: underline;
-}
-
-.user-comments-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.user-comment-item {
-    background: rgba(0, 0, 0, 0.03);
-    padding: 10px;
-    border-radius: var(--radius-sm);
-    position: relative;
-}
-
-body.dark-theme .user-comment-item {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.user-comment-date {
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    margin-bottom: 4px;
-}
-
-.user-comment-text {
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
-.user-comment-photos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 8px;
-}
-
-.comment-photo {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 4px;
-    cursor: zoom-in;
-    transition: transform 0.2s;
-}
-
-.comment-photo:hover {
-    transform: scale(1.1);
-}
-
-.btn-add-comment {
-    background: var(--ks-blue);
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    font-weight: 600;
-    align-self: flex-start;
-}
-
-.btn-add-comment:hover {
-    background: var(--ks-blue-dark);
-}
-
-/* Comment actions */
-.comment-actions {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    gap: 8px;
-    opacity: 0;
-    transition: opacity 0.2s;
-}
-
-.user-comment-item:hover .comment-actions {
-    opacity: 1;
-}
-
-.action-btn {
-    background: white;
-    border: 1px solid var(--border-color);
-    width: 24px;
-    height: 24px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 0.8rem;
-}
-
-.action-btn:hover {
-    background: #f0f0f0;
-}
-
-.action-btn.delete:hover {
-    color: #d32f2f;
-    border-color: #d32f2f;
-}
-
-/* Image Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.modal-close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
 }
 
 .edit-actions {
