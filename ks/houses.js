@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
 
-            const commentsContainer = card.querySelector(`#comments-list-${houseId}`);
+            const commentsContainer = document.getElementById(`comments-list-${houseId}`);
             loadCloudComments(houseId, commentsContainer);
 
             const addBtn = card.querySelector('.btn-add-comment');
