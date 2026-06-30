@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
         grid.className = 'cards-grid';
         
         results.forEach(item => {
-            const houseId = `${item.street}_${item.house}`.replace(/\s+/g, '_');
+            const houseId = `${item.street}_${item.house}`.replace(/[^a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ0-9]/g, '_');
             const card = document.createElement('div');
             card.className = 'card house-card';
 
@@ -385,8 +385,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
 
-            const commentsContainer = document.getElementById(`comments-list-${houseId}`);
-            loadCloudComments(houseId, commentsContainer);
+            const commentsContainer = card.querySelector(`#comments-list-${houseId}`);
+            if (commentsContainer) {
+                loadCloudComments(houseId, commentsContainer);
+            }
 
             const addBtn = card.querySelector('.btn-add-comment');
             const textarea = card.querySelector('.user-comment-input');
